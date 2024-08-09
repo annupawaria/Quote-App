@@ -3,35 +3,39 @@ import axios from 'axios';
 import QuoteCard from './QuoteCard';
 import SavedQuotes from './SavedQuotes';
 
-function App() {
-  const [quote, setQuote] = useState('');
-  const [savedQuotes, setSavedQuotes] = useState([]);
+const App = () => {
+  const [quote,setQuote]=useState("")
+  const [savedQuote,setSavedQuotes]=useState([])
 
-  useEffect(() => {
-    fetchQuote();
-  }, []);
+  useEffect(()=>{
+    fetchQuote()
+  },[])
 
-  const fetchQuote = async () => {
+  const fetchQuote= async()=>{
     try {
-      const response = await axios.get('https://ron-swanson-quotes.herokuapp.com/v2/quotes');
-      setQuote(response.data[0]);
-    } catch (error) {
-      console.error('Error fetching quote:', error);
-    }
-  };
+    const response = await axios.get('https://ron-swanson-quotes.herokuapp.com/v2/quotes')
+    setQuote(response.data[0])
+  }
+ catch(error){
+  console.log('error')
+}}
 
-  const saveQuote = () => {
-    setSavedQuotes([...savedQuotes, quote]);
-  };
+const saveQuote = () => {
+  setSavedQuotes([...savedQuote, quote]);
+};
+
+
 
   return (
-    <div style={{ padding: '20px', textAlign: 'center' }}>
-      <h1>Random Ron Swanson Quote</h1>
-      <QuoteCard quote={quote} onSave={saveQuote} />
-      <button onClick={fetchQuote}>Get New Quote</button>
-      <SavedQuotes quotes={savedQuotes} />
+    <div style={{padding:'20px',textAlign:"center"}}>
+      <h1 >
+      Random Ron Swanson Quote
+      </h1>
+      <QuoteCard quote={quote} onSave={saveQuote}/>
+<SavedQuotes quotes={savedQuote}/>
+
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
