@@ -27,7 +27,7 @@ function App() {
   return (
     <div style={{ padding: '20px', textAlign: 'center' }}>
       <h1>Random Ron Swanson Quote</h1>
-      {/* <QuoteCard quote={quote} onSave={saveQuote} /> Ensure this is correct */}
+      <QuoteCard quote={quote} onSave={saveQuote} />
       <button onClick={fetchQuote}>Get New Quote</button>
       <SavedQuotes quotes={savedQuotes} />
     </div>
