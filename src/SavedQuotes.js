@@ -1,25 +1,26 @@
-import React from 'react'
+import React from 'react';
 
-const SavedQuotes = ({quote}) => {
+function SavedQuotes({ quotes }) {
   return (
-    <div style={{}}>
-      <p>Saved Quote</p>
-      {quote.map((q,index)=>{
-        <div key={index} 
-        style={{border: "2px solid grey", padding: "20px", textAlign: 'center ', marginBottom: "20px", backgroundColor: 'grey'}}>
-
-{q}
-
-
-        </div>
-      })}
-
-
-
-
-      <h1>Not any quote saved yet</h1>
+    <div>
+      <h2>Saved Quotes</h2>
+      {quotes.length === 0 ? (
+        <p>No quotes saved yet.</p>
+      ) : (
+        quotes.map((q, index) => (
+          <div key={index} style={{
+            border: '1px solid #ddd', 
+            borderRadius: '10px',
+            padding: '10px',
+            marginBottom: '10px',
+            backgroundColor: '#fff'
+          }}>
+            {q}
+          </div>
+        ))
+      )}
     </div>
-  )
+  );
 }
 
-export default SavedQuotes
+export default SavedQuotes;

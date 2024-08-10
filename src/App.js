@@ -31,7 +31,7 @@ const saveQuote = () => {
       <h1 >
       Random Ron Swanson Quote
       </h1>
-      <QuoteCard quote={quote} onSave={saveQuote}/>
+      <QuoteCard quote={quote} onSave={saveQuote} fetchQuote={fetchQuote}/>
 <SavedQuotes quotes={savedQuote}/>
 
     </div>

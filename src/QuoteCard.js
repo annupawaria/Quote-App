@@ -1,14 +1,14 @@
 import React from 'react'
 
-const QuoteCard = ({ quote ,onSave}) => {
+const QuoteCard = ({ quote ,onSave,fetchQuote}) => {
   return (
     <div>
     <div style={{ border: "2px solid grey", padding: "20px", textAlign: 'center ', marginBottom: "20px", backgroundColor: 'grey' }}>
       <p>{quote}</p>
-      <button >Save Quote</button>
+      <button onClick={onSave}>Save Quote</button>
      
     </div>
-     <button>Get New Quote</button>
+     <button onClick={fetchQuote}> Get New Quote</button>
      </div>
   )
 }
